@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gestionnaire d'Ombres</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <nav id="top-bar">
+      <input type="text" id="search" placeholder="Rechercher une ombre...">
+      <select id="tag-filter">
+        <option value="">Tous les tags</option>
+      </select>
+      <select id="cr-filter">
+        <option value="">Toutes catégories CR</option>
+        <option value="1-9">1-9</option>
+        <option value="10-14">10-14</option>
+        <option value="15-19">15-19</option>
+        <option value="20-59">20-59</option>
+        <option value="60+">60+</option>
+      </select>
+      <button id="add-btn">Ajouter</button>
+    </nav>
+    <div id="ombre-count"></div>
+    <div id="main-view"></div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

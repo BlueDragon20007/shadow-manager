@@ -1,0 +1,304 @@
+@import url('variables.css');
+
+body {
+  background: var(--background-main);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  max-width: 950px;
+  margin: auto;
+  min-height: 97vh;
+  padding: 2rem 1rem;
+}
+
+nav#top-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-card);
+  box-shadow: var(--shadow-glow);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  padding: 0.7rem 1.2rem;
+  box-sizing: border-box;
+}
+
+nav#top-bar input, nav#top-bar select {
+  background: var(--background-main);
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  font-size: 1em;
+  padding: 0.45em 1em;
+  box-sizing: border-box;
+}
+
+nav#top-bar button {
+  background: var(--primary-accent);
+  color: var(--text-main);
+  border: none;
+  padding: 0.7em 1.3em;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+
+nav#top-bar button:hover {
+  background: var(--primary-shadow-blue);
+}
+
+#main-view {
+  margin-top: 1em;
+}
+
+/* Cartes créature - CENTRAGE DES DONNÉES */
+.creature-card {
+  background: var(--background-card);
+  box-shadow: var(--shadow-glow);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border-card);
+  margin-bottom: 1.2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.creature-card h3 {
+  font-size: 1.18rem;
+  color: var(--primary-accent);
+  margin: 0 0 0.4em 0;
+  text-align: center;
+}
+
+.creature-info {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  font-size: 0.97em;
+  justify-content: center;
+}
+
+.creature-info span {
+  margin-right: 0;
+  color: var(--text-muted);
+  background: #234;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.creature-desc {
+  margin-top: 0.5em;
+  color: var(--text-main);
+  font-size: 0.98em;
+  text-align: center;
+}
+
+.creature-link {
+  margin-top: 0.4em;
+  text-align: center;
+}
+
+.creature-link a {
+  color: var(--primary-accent);
+  text-decoration: underline;
+  font-size: 0.97em;
+  word-break: break-all;
+}
+
+/* Boutons dans les cartes - CENTRAGE */
+.creature-card > div[style*="display:flex"] {
+  justify-content: center !important;
+}
+
+/* Formulaire ajout */
+#add-form {
+  background: var(--background-card);
+  box-shadow: var(--shadow-glow);
+  border-radius: 12px;
+  padding: 1.2rem 0.8rem;
+  border: 1px solid var(--border-card);
+  max-width: 320px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#add-form h2 {
+  font-size: 1.08em;
+  margin-bottom: 0.7em;
+  color: var(--primary-accent);
+}
+
+#add-form label {
+  font-size: 0.97em;
+  margin-bottom: 0.3rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+#add-form input,
+#add-form textarea {
+  width: 100%;
+  font-size: 0.97em;
+  margin: 3px 0 10px 0;
+  padding: 7px;
+  background: var(--background-main);
+  color: var(--text-main);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#add-form button {
+  background: var(--primary-accent);
+  color: var(--text-main);
+  border: none;
+  padding: 0.7em 1.3em;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+  box-sizing: border-box;
+}
+
+.filter-btn {
+  background: var(--background-main);
+  color: var(--primary-accent);
+  border: 1px solid var(--primary-accent);
+  border-radius: 8px;
+  padding: 0.35em 1em;
+  margin: 0 2px 4px 0;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.17s, color 0.17s;
+}
+
+.filter-btn.selected,
+.filter-btn:hover {
+  background: var(--primary-accent);
+  color: var(--text-main);
+}
+
+#tag-filter,
+#cr-filter {
+  display: flex;
+  gap: 0.4em;
+}
+
+#ombre-count {
+  color: var(--primary-accent);
+  font-size: 1.06em;
+  margin: 0 0 14px 2px;
+  font-weight: 500;
+}
+
+.mini-btn {
+  font-size: 0.98em;
+  padding: 0.34em 1.1em;
+  border-radius: 7px;
+  border: none;
+  background: var(--background-card);
+  color: var(--primary-accent);
+  box-shadow: var(--shadow-glow);
+  cursor: pointer;
+  transition: background 0.17s, color 0.17s;
+  box-sizing: border-box;
+}
+
+.mini-btn:hover {
+  background: var(--primary-accent);
+  color: var(--background-main);
+}
+
+/* === RESPONSIVE MOBILE === */
+@media (max-width: 768px) {
+  #app {
+    padding: 1rem 0.5rem;
+  }
+
+  nav#top-bar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem 0.7rem;
+  }
+
+  nav#top-bar input,
+  nav#top-bar select {
+    width: 100%;
+    max-width: 400px;
+    font-size: 0.95em;
+    padding: 0.5em 0.8em;
+  }
+
+  nav#top-bar button {
+    width: auto;
+    padding: 0.6em 1.8em;
+    align-self: center;
+  }
+
+  .creature-card {
+    padding: 0.9rem;
+  }
+
+  .creature-card h3 {
+    font-size: 1.08rem;
+  }
+
+  .creature-info {
+    gap: 0.8rem;
+  }
+
+  .mini-btn {
+    font-size: 0.88em;
+    padding: 0.4em 0.85em;
+  }
+
+  #add-form {
+    max-width: 100%;
+    padding: 1rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #app {
+    padding: 0.8rem 0.4rem;
+  }
+
+  nav#top-bar {
+    padding: 0.7rem 0.6rem;
+  }
+
+  nav#top-bar input,
+  nav#top-bar select {
+    font-size: 0.92em;
+    padding: 0.5em 0.7em;
+  }
+
+  nav#top-bar button {
+    padding: 0.55em 1.5em;
+    font-size: 0.95em;
+  }
+
+  .creature-card h3 {
+    font-size: 1rem;
+  }
+
+  .creature-info span {
+    font-size: 0.9em;
+    padding: 3px 8px;
+  }
+
+  .mini-btn {
+    font-size: 0.86em;
+    padding: 0.38em 0.75em;
+  }
+}
